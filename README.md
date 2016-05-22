@@ -2,7 +2,7 @@
 
 Yleisiä linkkejä:
 
-* [Linkki sovellukseeni](ollivaan.users.cs.helsinki.fi/kauppakassi)
+* [Linkki sovellukseeni](http://ollivaan.users.cs.helsinki.fi/kauppakassi)
 * [Linkki dokumentaatiooni](https://github.com/ollivaan/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
 ## Työn aihe
