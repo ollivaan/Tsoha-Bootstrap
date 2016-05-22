@@ -2,9 +2,10 @@
 
 Yleisiä linkkejä:
 
-* [Linkki sovellukseeni](https://www.cs.helsinki.fi)
-* [Linkki dokumentaatiooni](https://www.github.com)
+* [Linkki sovellukseeni](ollivaan.users.cs.helsinki.fi/kauppakassi)
+* [Linkki dokumentaatiooni](https://github.com/ollivaan/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
 ## Työn aihe
 
-Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkittenry.github.io/suunnittelu_ja_tyoymparisto/aiheet/Pokemon-kanta.html) 
+Tavoitteena on luoda palvelu, jonka avulla voit vertailla eri kauppojen hinta eroja ja näin päättää missä kannattaa
+tehdä päivittäiset ostokset. Palvelu tarjoaa myös kauppiaalle helpon tavan saada palautetta ja kehitettävää asiakkailta ja mahdollisten kyselyiden luomiseen.
