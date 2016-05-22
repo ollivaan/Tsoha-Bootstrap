@@ -1,0 +1,13 @@
+                    **Johdanto**
+      Järjestelmän tarkoituksena on tarjota halvin kauppakassin hinta. Järjestelmästä
+      löytyy eri tuotteiden hintoja eri kaupoista, jonka avulla voit vertailla missä
+      kaupassa on halvimmat hinnat. Tarkoituksena on tarjota kuluttajalle halvin 
+      mahdollinen lähikauppa.
+      Järjestelmä rakennetaan selainpohjaiseksi ja työ toteutetaan Apache palvelimen alla.
+      Järjestelmä tehdään käyttämällä PHP ohjelmointikieltä, käyttäjän selaimen ei tarvitse
+      tukea javascriptia. Ohjelmisto toimii vain yhdellä kannalla.
+      
+      
+                  **Käyttötapauskaavio**
+                  
+  
