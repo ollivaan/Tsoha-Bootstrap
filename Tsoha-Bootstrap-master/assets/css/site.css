@@ -1,0 +1,22 @@
+#main-container{
+  max-width: 1200px;
+  padding: 10px 25px;
+  margin: 0px auto;
+}
+
+.navbar .container-fluid{
+  max-width: 1200px;
+  margin: 0px auto;
+}
+body {
+    background-image: url("sprout.png");
+    background-repeat: no-repeat;
+    /*background-position: center;*/
+        height: 100px;
+        /*width: 100px;*/
+  /*-o-object-fit: contain;*/
+    /*background-attachment: fixed;*/
+}
+h1 {
+    background-color: violet;
+}
