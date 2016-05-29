@@ -9,14 +9,20 @@
   margin: 0px auto;
 }
 body {
-    background-image: url("sprout.png");
+    background-image: url("img_table.png");
     background-repeat: no-repeat;
     /*background-position: center;*/
-        height: 100px;
-        /*width: 100px;*/
-  /*-o-object-fit: contain;*/
-    /*background-attachment: fixed;*/
+    height: 100px;
+    opacity: 0.8;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+/*img {
+    opacity: 0.4;
+    filter: alpha(opacity=40);  For IE8 and earlier 
+}*/
 }
 h1 {
-    background-color: violet;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 250%;
+    background-color: gray;
+    
 }
