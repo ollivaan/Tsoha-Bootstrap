@@ -5,7 +5,8 @@
     public static function index(){
       // make-metodi renderöi app/views-kansiossa sijaitsevia tiedostoja
 //   	  View::make('home.html');
-        echo 'Tämä on etusivu!';
+   	  View::make('suunnitelmat/frontpage.html');
+//        echo 'Tämä on etusivu!';
     }
       public static function groceries_list(){
     View::make('suunnitelmat/groceries_list.html');

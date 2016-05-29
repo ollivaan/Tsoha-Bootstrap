@@ -2,12 +2,15 @@
   max-width: 1200px;
   padding: 10px 25px;
   margin: 0px auto;
+  color: black;
+  background-color: gainsboro;
 }
 
 .navbar .container-fluid{
   max-width: 1200px;
   margin: 0px auto;
 }
+
 body {
     background-image: url("img_table.png");
     background-repeat: no-repeat;
@@ -25,4 +28,7 @@ h1 {
     font-size: 250%;
     background-color: gray;
     
+}
+th {
+    background-color: wheat;
 }
