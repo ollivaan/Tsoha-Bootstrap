@@ -21,3 +21,6 @@ $routes->get('/login', function() {
 $routes->get('/frontpage', function() {
   HelloWorldController::frontpage();
 });
+$routes->get('/new', function() {
+  HelloWorldController::new_product();
+});

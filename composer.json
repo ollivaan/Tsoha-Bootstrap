@@ -3,7 +3,10 @@
 		"classmap": [
 			"config/database.php",
 			"lib",
-			"app/controllers"
+			"app/controllers",
+                        "app/models",
+                        "app/models/vendor.php"
+                        
 		]
 	},
 	"require": {
