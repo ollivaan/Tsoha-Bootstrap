@@ -3,13 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/views/base.html</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/composer.json</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/models/grocery.php</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/sql/create_tables.sql</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/models/vendor.php</file>
             <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/sql/add_test_data.sql</file>
-            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/views/suunnitelmat/login.html</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/config/routes.php</file>
             <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/views/suunnitelmat/groceries_list.html</file>
-            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/views/helloworld.html</file>
-            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/views/suunnitelmat/frontpage.html</file>
-            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/assets/css/site.css</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/controllers/hello_world_controller.php</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/views/Grocery/index.html</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/views/Grocery/new_product.html</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/controllers/groceries_controller.php</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/models/Customer.php</file>
         </group>
     </open-files>
 </project-private>

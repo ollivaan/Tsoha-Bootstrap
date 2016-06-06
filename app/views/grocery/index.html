@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Käyttäjän Henri pelikirjasto</h1>
+
+
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Nimi</th>
+        <th>Julkaisupäivä</th>
+        <th>Julkaisija</th>
+        <th>Status</th>
+        <th>Lisäyspäivä</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for game in games %}
+        <tr>
+          <td><a href="{{base_path}}/grocery/{{grocery.id}}">{{grocery.name}}</td>
+          <td>{{grocery.published}}</td>
+          <td>{{grocery.publisher}}</td>
+          <td>
+              {% if grocery.purchased %}
+                <label class="label label-success">pelattu
+              {% else %}
+                <label class="label label-danger">kesken
+              {% endif %}
+          </td>
+          <!--<td>{{game.added}}</td>-->
+          <!--<td><a class="btn btn-default btn-sm" href="{{base_path}}/game/{{game.id}}/edit">Muokkaa</a></td>-->
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

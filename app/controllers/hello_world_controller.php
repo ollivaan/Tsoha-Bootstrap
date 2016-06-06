@@ -31,10 +31,10 @@
     public static function groceries_list(){
     View::make('suunnitelmat/groceries_list.html');
   }
-      public static function new_product(){
-    View::make('Grocery/new_product.html');
-  }
+  
 
+
+  
   public static function grocery_show(){
     View::make('suunnitelmat/grocery_show.html');
   }
