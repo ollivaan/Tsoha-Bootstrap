@@ -14,24 +14,33 @@
     }
     public static function sandbox(){
 //  View::make('helloworld.html');
-        $tuote = Grocery::find(1);
+        $tuote = Product::find(1);
+//        $tuote3 = Product::save();
+        
+        $products = Product::all();
         $groceries = Grocery::all();
-        $accountTesti = Customer::find(2);
-        $accountTesti2 = Customer::all();
+        $grocerieshaku = Grocery::find(2);
+//        $accountTesti = Customer::save();
+//        $accountTesti2 = Customer::all();
         $vendorTesti = vendor::all();
         
+        Kint::dump($grocerieshaku);
+        Kint::dump($products);
         Kint::dump($groceries);
-        Kint::dump($accountTesti);
-        Kint::dump($accountTesti2);
+//        Kint::dump($accountTesti);
+//        Kint::dump($accountTesti2);
         Kint::dump($vendorTesti);
         Kint::dump($tuote);
+//        Kint::dump($tuote3);
         
 }
 
     public static function groceries_list(){
     View::make('suunnitelmat/groceries_list.html');
   }
-  
+    public static function new_review(){
+    View::make('products/new.html');
+  }  
 
 
   

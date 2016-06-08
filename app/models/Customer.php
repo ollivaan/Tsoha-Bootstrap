@@ -49,12 +49,16 @@ class Customer extends BaseModel{
 
    
 
-    public function save() {
-        $statement = 'INSERT INTO Account (name, password) VALUES (:name, :password)';
-        $query = DB::connection()->prepare($statement);
-        
-        $query->execute(array('name' => $this->name, 'password' => $this->password));
-    }
+//    public function save() {
+//        $statement = 'INSERT INTO Customer (name, password) VALUES (:name, :password) RETURNING id';
+//        $query = DB::connection()->prepare($statement);
+//        
+//        $query->execute(array('name' => $this->name, 'password' => $this->password));
+//        
+//        $row = $query->fetch();
+//        
+//        $this->id = $row['id'];
+//    }
     
     public function errors($password_verification) {
         $errors = array_merge($this->validate_name(), $this->validate_password($password_verification));

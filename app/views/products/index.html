@@ -15,27 +15,29 @@
         <th>Lisäyspäivä</th>
         <th>Julkaisija</th>
         <th>Id</th>
-        <th>Arvosana</th>
+        <th>Hinta</th>
+        <td><a class="btn btn-default btn-sm" href="{{base_path}}/new">Lisää tuote</a></td>
         <th></th>
       </tr>
       
     </thead>
     <tbody>
-      {% for grocery in groceries %}
+      {% for product in products %}
     <tr>
-          <td><a href="{{base_path}}/grocery/{{grocery.id}}">{{grocery.name}}</td>
-          <td>{{grocery.published}}</td>
-          <td>{{grocery.publisher}}</td>
-          <td>{{grocery.id}}</td>
-          <td>
+          <td><a href="{{base_path}}/products/{{product.id}}">{{product.name}}</td>
+          <td>{{product.published}}</td>
+          <td>{{product.publisher}}</td>
+          <td>{{product.id}}</td>
+<!--          <td>
               {% if grocery.purchased %}
                 <label class="label label-success">arvioitu
               {% else %}
                 <label class="label label-danger">ei arvioitu
               {% endif %}
-          </td>
-          <td>{{grocery.price}}</td>
-          <td><a class="btn btn-default btn-sm" href="{{base_path}}/grocery/{{grocery.id}}/edit">Lisää arvostelu</a></td>
+          </td>-->
+<!-- tämä tulee vain kauppiaalle käyttöön-->
+          <td>{{product.price}}</td>
+<!--          <td><a class="btn btn-default btn-sm" href="{{base_path}}/new">Lisää tuote</a></td>-->
         </tr>
       {% endfor %}
     </tbody>

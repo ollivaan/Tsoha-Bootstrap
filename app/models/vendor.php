@@ -29,25 +29,23 @@ class Vendor extends BaseModel{
       return $account;
      
   }
-//   public static function find($id){
-//    $query = DB::connection()->prepare('SELECT * FROM Vendor WHERE id = :id LIMIT 1');
-//    $query->execute(array('id' => $id));
-//    $row = $query->fetch();
-//
-//    if($row){
-//      $account = new Customer(array(
-//        'id' => $row['id'],
-//        'name' => $row['name'],
-//        'password' => $row['password'],
-//          'invitation'=>$row['invitation']
-//      ));
-//
-//      return $account;
-//    }
-//
-//    return null;
-//  }
-   
+   public static function find($id){
+    $query = DB::connection()->prepare('SELECT * FROM Vendor WHERE id = :id LIMIT 1');
+    $query->execute(array('id' => $id));
+    $row = $query->fetch();
+
+    if($row){
+      $vendor = new Vendor(array(
+        'id' => $row['id'],
+        'name' => $row['name']
+      ));
+
+      return $vendor;
+    }
+
+    return null;
+  }
+
     public function save() {
         $statement = 'INSERT INTO Vendor (name, password) VALUES (:name, :password)';
         $query = DB::connection()->prepare($statement);

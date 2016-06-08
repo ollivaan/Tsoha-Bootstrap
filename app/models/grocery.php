@@ -2,13 +2,18 @@
 
 class Grocery extends BaseModel{
     // attribuutit
-    public $id, $customer_id, $name, $purchased, $description, $published, $publisher, $price;
+    public $id, $customer_id, $name, $address, $phone, $mail, $openinhours;
   // konstruktori
+
+
+ 
     
     public function __construct($attributes){      
     parent::__construct($attributes);
-    $this->tuote = array('id'=> 1, 'name'=> 'Scriracha');
-
+    $this->groceries = array('id'=> 1, 'name'=> 'Alepa', 'address'=>'syrjätie 3', 'phone'=>'0141024', 'mail'=>'alepa.@.fi', 'openinhours'=>'06:00-23:00');
+    $this->tuote2 = array('id'=> 2, 'name'=> 'K-market', 'address'=>'Tirinläntie', 'phone'=>'0141045', 'mail'=>'kmarket.@.fi', 'openinhours'=>'06:00-23:00');
+//    $this->tuote2 = array('id'=> 6, 'name'=> 'Maito', 'purchased'=>'11-11-1900', 'description'=>'mieto', 'published'=>'12-11-1993', 'publisher'=>'unknow', 'price'=>1);
+//    $skyrim = new Grocery(array('id' => 9, 'name' => 'The Elder Scrolls V: Skyrim', 'description' => 'Arrow to the knee'));
     
     }
   
@@ -25,11 +30,10 @@ class Grocery extends BaseModel{
           $groceries[] = new Grocery(array('id' => $row['id'],
               'customer_id' => $row['customer_id'],
               'name'=> $row['name'],
-              'purchased'=>$row['purchased'],
-              'description'=>$row['description'],
-              'published'=>$row['published'],
-              'publisher'=>$row['publisher'],
-              'price'=>$row['price']
+              'address'=>$row['address'],
+              'phone'=>$row['phone'],
+              'mail'=>$row['mail'],
+              'openinhours'=>$row['openinhours']
                   ));
                   
       }
@@ -47,11 +51,10 @@ class Grocery extends BaseModel{
         'id' => $row['id'],
         'customer_id' => $row['customer_id'],
         'name' => $row['name'],
-        'purchased' => $row['purchased'],
-        'description' => $row['description'],
-        'published' => $row['published'],
-        'publisher' => $row['publisher'],
-        'price' => $row['price']
+        'address'=>$row['address'],
+        'phone'=>$row['phone'],
+        'mail'=>$row['mail'],
+        'openinhours'=>$row['openinhours']
       ));
 
       return $grocery;
@@ -59,6 +62,13 @@ class Grocery extends BaseModel{
 
     return null;
   }
+
+//      public function save() {
+//        $statement = 'INSERT INTO Grocery (name, address, phone, mail, openinhours) VALUES (:name, :password, :address, :phone, :mail, :openinhours)';
+//        $query = DB::connection()->prepare($statement);
+//        
+//        $query->execute(array('name' => $this->name, 'address' => $this->address, 'phone' => $this->phone, 'mail' => $this->mail, 'openinhours' => $this->openinhours));
+//    }
 }
               
              
