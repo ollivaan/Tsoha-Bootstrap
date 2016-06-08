@@ -3,8 +3,10 @@
 Yleisiä linkkejä:
 
 * [Linkki sovellukseeni](http://ollivaan.users.cs.helsinki.fi/kauppakassi)
-* [Linkki tuotteeseen](http://ollivaan.users.cs.helsinki.fi/kauppakassi/grocery)
-* [Linkki tuotelistaan](http://ollivaan.users.cs.helsinki.fi/kauppakassi/groceries)
+* [Linkki kauppaan](http://ollivaan.users.cs.helsinki.fi/kauppakassi/grocery/1)
+* [Linkki kauppiaslistaan](http://ollivaan.users.cs.helsinki.fi/kauppakassi/products)
+* [Linkki tuotteeseen](http://ollivaan.users.cs.helsinki.fi/kauppakassi/product/1)
+* [Linkki tuotelistaan](http://ollivaan.users.cs.helsinki.fi/kauppakassi/products)
 * [Linkki kirjautumiseen](http://ollivaan.users.cs.helsinki.fi/kauppakassi/login)
 * [Linkki dokumentaatiooni](https://github.com/ollivaan/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
