@@ -47,7 +47,9 @@ class ProductController extends BaseController{
 }
 public static function edit($id) {
     $product = Product::find($id);
+
     View::make('products/edit.html', array('attributes' => $product));
+    
 }
 
 public static function update($id) {
@@ -75,7 +77,7 @@ public static function update($id) {
     }
   }
     public static function destroy($id){
-    // Alustetaan Game-olio annetulla id:llä
+    
     $product = Product::find($id);
     $product_name = $product->name . " ";
         $onnistui = $product->delete();
@@ -84,12 +86,7 @@ public static function update($id) {
         } else {
             Redirect::to('/product/' . $id, array('error' => 'Tuotteen poistaminen epäonnistui.'));
         }
-//    $product = new Product(array('id' => $id));
-    // Kutsutaan Game-malliluokan metodia destroy, joka poistaa pelin sen id:llä
-//    $product->destroy();
 
-    // Ohjataan käyttäjä pelien listaussivulle ilmoituksen kera
-//    Redirect::to('/products', array('message' => 'Peli on poistettu onnistuneesti!'));
   }
     
 }

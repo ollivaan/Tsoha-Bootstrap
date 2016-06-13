@@ -16,7 +16,9 @@
         <th>Julkaisija</th>
         <th>Id</th>
         <th>Hinta</th>
-        <td><a class="btn btn-default btn-sm" href="{{base_path}}/new">Lisää tuote</a></td>
+        <td><a class="btn-success" href="{{base_path}}/new" style="display: inline-block;"><button type="submit" class="btn btn-success"> Lisää uusi tuote</button></a></td>
+        <!--<td><form method="post" action="{{base_path}}/new" style="display: inline-block;">-->
+  
         <th></th>
       </tr>
       
@@ -32,8 +34,11 @@
 
 <!-- tämä tulee vain kauppiaalle käyttöön-->
           <td>{{product.price}}</td>
-          <td><form method="post" action="{{base_path}}/product/{{product.id}}" style="display: inline-block;">
+          <td><form method="post" action="{{base_path}}/product/destroy/{{product.id}}" style="display: inline-block;">
   <button type="submit" class="btn btn-danger">Poista</button>
+</form></td>
+          <td><form method="post" action="{{base_path}}/product/edit/{{product.id}}" style="display: inline-block;">
+  <button type="submit" class="btn btn-warning">Muokkaa</button>
   <!--/product/destroy/-->
 </form></td>
 <!--          <td><a class="btn btn-default btn-sm" href="{{base_path}}/new">Lisää tuote</a></td>-->

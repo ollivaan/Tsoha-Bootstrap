@@ -112,16 +112,27 @@ class Product extends BaseModel{
     // Asetetaan lisätyn rivin id-sarakkeen arvo oliomme id-attribuutin arvoksi
     $this->id = $row['id'];
   }
-         public function update(){
-    // Lisätään RETURNING id tietokantakyselymme loppuun, niin saamme lisätyn rivin id-sarakkeen arvon
-    $query = DB::connection()->prepare('UPDATE Product (name, publisher, category, published ,description, price) VALUES (:name, :publisher, :category, :published , :description , :price) RETURNING id');
-    // Muistathan, että olion attribuuttiin pääse syntaksilla $this->attribuutin_nimi
-    $query->execute(array('name' => $this->name, 'publisher' => $this->publisher, 'category' => $this->category , 'published' => $this->published,'description' => $this->description, 'price' => $this->price));
-    // Haetaan kyselyn tuottama rivi, joka sisältää lisätyn rivin id-sarakkeen arvon
-    $row = $query->fetch();
-    // Asetetaan lisätyn rivin id-sarakkeen arvo oliomme id-attribuutin arvoksi
-    $this->id = $row['id'];
-  }
+//         public function update(){
+//    // Lisätään RETURNING id tietokantakyselymme loppuun, niin saamme lisätyn rivin id-sarakkeen arvon
+//    $query = DB::connection()->prepare('UPDATE Product (name, publisher, category, published ,description, price) VALUES (:name, :publisher, :category, :published , :description , :price) RETURNING id');
+//    // Muistathan, että olion attribuuttiin pääse syntaksilla $this->attribuutin_nimi
+//    $query->execute(array('name' => $this->name, 'publisher' => $this->publisher, 'category' => $this->category , 'published' => $this->published,'description' => $this->description, 'price' => $this->price));
+//    // Haetaan kyselyn tuottama rivi, joka sisältää lisätyn rivin id-sarakkeen arvon
+//    $row = $query->fetch();
+//   
+//    $this->id = $row['id'];
+//         
+//  }
+      public function update() {
+           $query = DB::connection()->prepare('UPDATE Product SET name = :name, publisher = :publisher, category = :category, published = :published, description = :description, price = :price WHERE id = :id');
+//        $query = DB::connection()->prepare('UPDATE Partahoyla SET viittauksia = :viittauksia, aggressiivisuus = :aggressiivisuus WHERE id = :id');
+        try {
+            $query->execute(array('name' => $this->name, 'publisher' => $this->publisher, 'category' => $this->category , 'published' => $this->published,'description' => $this->description, 'price' => $this->price));
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
     public function delete() {
        
             $query = DB::connection()->prepare('DELETE FROM Product WHERE id = :id');
