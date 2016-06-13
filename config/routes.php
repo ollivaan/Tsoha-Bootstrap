@@ -51,6 +51,29 @@ $routes->post('/product/destroy/:id', function($id){
 $routes->get('/product/edit/:id', function($id){
     ProductController::edit($id);
 });
+
+$routes->post('/product/edit/:id', function($id){
+  
+  ProductController::update($id);
+});
+
+
+
+
 $routes->get('/grocery/:id', function($id){
     GroceryController::show($id);
+});
+
+
+
+
+
+
+$routes->get('/login', function(){
+  // Kirjautumislomakkeen esittäminen kato myös et pitkääkö olla suunnitelmat edes
+  UserController::login();
+});
+$routes->post('/login', function(){
+  // Kirjautumisen käsittely
+  UserController::handle_login();
 });

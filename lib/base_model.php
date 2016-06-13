@@ -14,14 +14,23 @@
         }
       }
     }
-
     public function errors() {
         // Lisätään $errors muuttujaan kaikki virheilmoitukset taulukkona
         $errors = array();
         foreach ($this->validators as $validator) {
             // Kutsu validointimetodia tässä ja lisää sen palauttamat virheet errors-taulukkoon
-            $errors = array_merge($errors, $this->{$validator}());
+            $validator_errors = $this->{$validator}();
+            $errors = array_merge($errors, $validator_errors);
         }
         return $errors;
     }
+
+       public function validate_string_not_empty($mita, $string) {
+        $errors = array();
+        if ($string == '' || $string == null) {
+            $errors[] = $mita . " ei saa olla tyhjä!";
+        }
+        return $errors;
+    }
+
 }

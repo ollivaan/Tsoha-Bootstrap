@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% import "macros/forms.html" as forms %}
 
   <h1>Kauppiaan tuotteet</h1>
 
@@ -34,13 +35,13 @@
 
 <!-- tämä tulee vain kauppiaalle käyttöön-->
           <td>{{product.price}}</td>
-          <td><form method="post" action="{{base_path}}/product/destroy/{{product.id}}" style="display: inline-block;">
-  <button type="submit" class="btn btn-danger">Poista</button>
-</form></td>
-          <td><form method="post" action="{{base_path}}/product/edit/{{product.id}}" style="display: inline-block;">
-  <button type="submit" class="btn btn-warning">Muokkaa</button>
-  <!--/product/destroy/-->
-</form></td>
+          <td> {{forms.destroy_button("#{base_path}/product/destroy/#{product.id}")}} </td>
+          <td> {{forms.change_button("#{base_path}/product/edit/#{product.id}")}} </td>
+          <!--<td>  {{forms.destroy_button()}} </td>-->
+<!--          <td><form method="post" action="{{base_path}}/product/edit/{{product.id}}" style="display: inline-block;">
+  <button type="submit" class="btn btn-success">Muuta</button>
+</form></td>-->
+          <!--<td>{{forms.change_button()}}</td>-->
 <!--          <td><a class="btn btn-default btn-sm" href="{{base_path}}/new">Lisää tuote</a></td>-->
         </tr>
       {% endfor %}

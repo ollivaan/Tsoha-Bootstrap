@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% import "macros/forms.html" as forms %}
 
 
 <!--<h1>{{grocery.name}}</h1>-->
@@ -38,8 +39,9 @@
               {% endif %}
           </td>-->
           <td>{{product.price}}</td>
-          <td><a class="btn btn-default btn-sm" href="{{base_path}}/products/{{product.id}}/edit">Muokkaa</a></td>
-        </tr>
+          <!--<td><a class="btn btn-default btn-sm" href="{{base_path}}/products/{{product.id}}/edit">Muokkaa</a></td>-->
+          <td> {{forms.change_button("#{base_path}/product/edit/#{product.id}")}} </td>
+          </tr>
     </thead>
 
   </table>

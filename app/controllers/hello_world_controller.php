@@ -12,17 +12,17 @@
    	  View::make('suunnitelmat/frontpage.html');
 //        echo 'Tämä on etusivu!';
     }
-//    public static function sandbox(){
-//          $doom = new Product(array(
-//    'name' => 'd',
-//    'published' => 'eilen',
-//    'publisher' => 'id Software',
-//    'description' => 'Boom, boom!'
-//  ));
-//  $errors = $doom->errors();
-//
-//  Kint::dump($errors);
-//}
+    public static function sandbox(){
+          $doom = new Product(array(
+    'name' => '',
+    'published' => '',
+    'publisher' => '',
+    'description' => ''
+  ));
+  $errors = $doom->errors();
+
+  Kint::dump($errors);
+}
 ////  View::make('helloworld.html');
 //        $tuote = Product::find(1);
 ////        $tuote99 = Product::find(99);

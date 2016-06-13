@@ -12,31 +12,26 @@ class Product extends BaseModel{
     $this->tuote2 = array('id'=> 6, 'name'=> 'Maito', 'purchased'=>'11-11-1900', 'description'=>'mieto', 'published'=>'12-11-1993', 'publisher'=>'unknow', 'price'=>1);
     $this->tuote3 = array('id'=> 7, 'name'=> 'Maito', 'purchased'=>'11-11-1900', 'description'=>'mieto','expirationdate'=>'11-22-3100'  , 'published'=>'12-11-1993', 'publisher'=>'unknow','category'=>'juoma' ,'price'=>1);
     $this->tuote99 = array('id'=> 99, 'name'=> 'V', 'purchased'=>'11-11-1900', 'description'=>'mieto','expirationdate'=>'11-22-3100'  , 'published'=>'12-11-1993', 'publisher'=>'unknow','category'=>'juoma' ,'price'=>1);
-    
-   
-// parent::construct($attributes);
-      
-  $this->validators = array('validate_errors');
-//    $skyrim = new Grocery(array('id' => 9, 'name' => 'The Elder Scrolls V: Skyrim', 'description' => 'Arrow to the knee'));
-    
+ 
+    $this->validators = array('validate_errors');
     }
+
+
+
+
+
   public function validate_errors() {
       $errors=array();
       if($this->name == '' || $this->name == null) {
           $errors[]= 'name cannot be empty!';          
       }
-      if($this->description == '' || $this->description == null) {
+             if($this->description == '' || $this->description == null) {
           $errors[]= 'description cannot be empty';
-      }
-      if($this->publisher == '' || $this->publisher == null) {
-          $errors[]= 'description cannot be empty';
-      }
+             }
+
       if($this->price == '' || $this->price == null) {
           $errors[]= 'price cannot be empty';
       }
-//      if($this->expirationdate == '' || $this->expirationdate == null) {
-//          $errors[]= 'expiration date cannot be empty';
-//      }
       if($this->category == '' || $this->category == null) {
           $errors[]= 'category date cannot be empty';
       }
@@ -112,27 +107,32 @@ class Product extends BaseModel{
     // Asetetaan lisätyn rivin id-sarakkeen arvo oliomme id-attribuutin arvoksi
     $this->id = $row['id'];
   }
-//         public function update(){
-//    // Lisätään RETURNING id tietokantakyselymme loppuun, niin saamme lisätyn rivin id-sarakkeen arvon
-//    $query = DB::connection()->prepare('UPDATE Product (name, publisher, category, published ,description, price) VALUES (:name, :publisher, :category, :published , :description , :price) RETURNING id');
-//    // Muistathan, että olion attribuuttiin pääse syntaksilla $this->attribuutin_nimi
-//    $query->execute(array('name' => $this->name, 'publisher' => $this->publisher, 'category' => $this->category , 'published' => $this->published,'description' => $this->description, 'price' => $this->price));
-//    // Haetaan kyselyn tuottama rivi, joka sisältää lisätyn rivin id-sarakkeen arvon
-//    $row = $query->fetch();
-//   
-//    $this->id = $row['id'];
+public function update(){
+  $query = DB::connection()->prepare('UPDATE Product SET value = (name = :name, publisher = :publisher, category = :category, published = :published, description = :description, price = :price) WHERE id = :id');
+//  $sql = "UPDATE mytable SET value = '{$value}' WHERE id = {$id}";
+  $query->execute(array('name' => $this->name, 'publisher' => $this->publisher, 'category' => $this->category , 'published' => $this->published,'description' => $this->description, 'price' => $this->price));
+
+  $row = $query->fetch();
+      $this->id = $row['id'];     
+
+//  Kint::dump($row);
+}
+
 //         
 //  }
-      public function update() {
-           $query = DB::connection()->prepare('UPDATE Product SET name = :name, publisher = :publisher, category = :category, published = :published, description = :description, price = :price WHERE id = :id');
-//        $query = DB::connection()->prepare('UPDATE Partahoyla SET viittauksia = :viittauksia, aggressiivisuus = :aggressiivisuus WHERE id = :id');
-        try {
-            $query->execute(array('name' => $this->name, 'publisher' => $this->publisher, 'category' => $this->category , 'published' => $this->published,'description' => $this->description, 'price' => $this->price));
-            return true;
-        } catch (Exception $e) {
-            return false;
-        }
-    }
+//      public function update() {
+//           $query = DB::connection()->prepare('UPDATE Product SET name = :name, publisher = :publisher, category = :category, published = :published, description = :description, price = :price WHERE id = :id');
+////        $query = DB::connection()->prepare('UPDATE Partahoyla SET viittauksia = :viittauksia, aggressiivisuus = :aggressiivisuus WHERE id = :id');
+//        try {
+//    $query->execute(array('name' => $this->name, 'publisher' => $this->publisher, 'category' => $this->category , 'published' => $this->published,'description' => $this->description, 'price' => $this->price));
+//        $row = $query->fetch();
+//   
+//    $this->id = $row['id'];      
+//    return true;
+//        } catch (Exception $e) {
+//            return false;
+//        }
+//    }
     public function delete() {
        
             $query = DB::connection()->prepare('DELETE FROM Product WHERE id = :id');
