@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <h1>Kauppiaan tuotteet</h1>
+<h1> Muokkaa! </h1>
+<!--<h1>{{grocery.name}}</h1>-->
+<div class="alert alert-success">
+  {{message}}
+</div>
 
+<h1>Tuote</h1> 
+{{ "now"|date('d/m/Y H:i', timezone="Europe/Paris") }}
   <!-- Lisää tuote on vain kauppiaan käytössä-->
 
 
@@ -16,29 +22,25 @@
         <th>Julkaisija</th>
         <th>Id</th>
         <th>Hinta</th>
-        <td><a class="btn btn-default btn-sm" href="{{base_path}}/new">Lisää tuote</a></td>
         <th></th>
       </tr>
-      
-    </thead>
-    <tbody>
-      {% for product in products %}
-      
-    <tr>
+          <tr>
           <td><a href="{{base_path}}/products/{{product.id}}">{{product.name}}</td>
           <td>{{product.published}}</td>
           <td>{{product.publisher}}</td>
           <td>{{product.id}}</td>
-
-<!-- tämä tulee vain kauppiaalle käyttöön-->
+          
+<!--          <td>
+              {% if product.purchased %}
+                <label class="label label-success">arvioitu
+              {% else %}
+                <label class="label label-danger">ei arvioitu
+              {% endif %}
+          </td>-->
           <td>{{product.price}}</td>
-          <td><form method="post" action="{{base_path}}/product/{{product.id}}" style="display: inline-block;">
-  <button type="submit" class="btn btn-danger">Poista</button>
-  <!--/product/destroy/-->
-</form></td>
-<!--          <td><a class="btn btn-default btn-sm" href="{{base_path}}/new">Lisää tuote</a></td>-->
+          <td><a class="btn btn-default btn-sm" href="{{base_path}}/products/edit/{{product.id}}">Muokkaa</a></td>
         </tr>
-      {% endfor %}
-    </tbody>
+    </thead>
+
   </table>
 {% endblock %}

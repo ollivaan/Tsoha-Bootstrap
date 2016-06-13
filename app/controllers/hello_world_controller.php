@@ -12,28 +12,44 @@
    	  View::make('suunnitelmat/frontpage.html');
 //        echo 'Tämä on etusivu!';
     }
-    public static function sandbox(){
-//  View::make('helloworld.html');
-        $tuote = Product::find(1);
-//        $tuote3 = Product::save();
+//    public static function sandbox(){
+//          $doom = new Product(array(
+//    'name' => 'd',
+//    'published' => 'eilen',
+//    'publisher' => 'id Software',
+//    'description' => 'Boom, boom!'
+//  ));
+//  $errors = $doom->errors();
+//
+//  Kint::dump($errors);
+//}
+////  View::make('helloworld.html');
+//        $tuote = Product::find(1);
+////        $tuote99 = Product::find(99);
+//
+////        $tuote3 = Product::save();
+////        $tuote4 = Product::find(9);
+////        $Sinappi = Product::find(7);
+//        $products = Product::all();
+//        
+//        $groceries = Grocery::all();
+//        $grocerieshaku = Grocery::find(2);
+////        $accountTesti = Customer::save();
+////        $accountTesti2 = Customer::all();
+//        $vendorTesti = vendor::all();
+//        
+////        Kint::dump($tuote4);
+//        Kint::dump($grocerieshaku);
+//        Kint::dump($products);
+//        Kint::dump($groceries);
+////        Kint::dump($accountTesti);
+////        Kint::dump($accountTesti2);
+//        Kint::dump($vendorTesti);
+//        Kint::dump($tuote);
+////        Kint::dump($tuote3);
         
-        $products = Product::all();
-        $groceries = Grocery::all();
-        $grocerieshaku = Grocery::find(2);
-//        $accountTesti = Customer::save();
-//        $accountTesti2 = Customer::all();
-        $vendorTesti = vendor::all();
-        
-        Kint::dump($grocerieshaku);
-        Kint::dump($products);
-        Kint::dump($groceries);
-//        Kint::dump($accountTesti);
-//        Kint::dump($accountTesti2);
-        Kint::dump($vendorTesti);
-        Kint::dump($tuote);
-//        Kint::dump($tuote3);
-        
-}
+
+
 
     public static function groceries_list(){
     View::make('suunnitelmat/groceries_list.html');

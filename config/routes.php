@@ -8,12 +8,19 @@
     HelloWorldController::sandbox();
   });
   
-//  $routes->get('/groceries', function() {
-//  HelloWorldController::groceries_list();
-//});
-//$routes->get('/grocery', function() {
-//  HelloWorldController::grocery_show();
-//});
+$routes->get('/product/:id/edit', function($id){
+  
+  ProductController::edit($id);
+});
+$routes->post('/product/:id/edit', function($id){
+
+  ProductController::update($id);
+});
+
+$routes->post('/products', function($id){
+ 
+  ProductController::destroy($id);
+});
 
 $routes->get('/login', function() {
   HelloWorldController::login();
@@ -50,6 +57,12 @@ $routes->get('/account/:id', function($id){
 });
 $routes->get('/product/:id', function($id){
     ProductController::show($id);
+});
+$routes->get('/product/destroy/:id', function($id){
+    ProductController::destroy($id);
+});
+$routes->get('/products/edit/:id', function($id){
+    ProductController::edit($id);
 });
 $routes->get('/grocery/:id', function($id){
     GroceryController::show($id);

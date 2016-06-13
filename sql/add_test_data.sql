@@ -12,6 +12,5 @@ INSERT INTO Grocery (name, address, phone, mail, openinhours) VALUES ('Citymarke
 INSERT INTO Grocery (name, address, phone, mail, openinhours) VALUES ('Prisma', 'Iso omena', '050305555', 'sryhma@.fi', '08:00-22:00');
 INSERT INTO Grocery (name, address, phone, mail, openinhours) VALUES ('Lidl', 'Otaniem', '050303333', 'onhalpa@lidl.fi', '08:00-22:00');
 INSERT INTO Grocery (name, address, phone, mail, openinhours) VALUES ('K-market', 'Jokela', '0503024420', 'kmarket@kesko.fi', '08:00-22:00');
-INSERT INTO Grocery (name, address, phone, mail, openinhours) VALUES ('Valintalo', 'Hyvinkää, '05030333', 'valintalo@valinta.fi', '08:00-22:00');
-INSERT INTO 
+
 
