@@ -13,11 +13,4 @@ Yleisiä linkkejä:
 ## Työn aihe
 
 Tavoitteena on luoda palvelu, jonka avulla voit vertailla eri kauppojen hinta eroja ja näin päättää missä kannattaa
-tehdä päivittäiset ostokset. Palvelu tarjoaa myös kauppiaalle helpon tavan saada palautetta ja kehitettävää asiakkailta ja mahdollisten kyselyiden luomiseen.
-
-## Käyttöohje
-
-Tunnukset ovat
-käyttäjätunnus: matti
-salasana: matti123
-Ikävä kyllä login ei toimi, joten tunnuksista ei tarvitse välittää. Myös tuotteen muuttaminen luo uuden tuotteen, joten ei toimi toivotulla tavalla. 
+tehdä päivittäiset ostokset. Palvelu tarjoaa myös kauppiaalle helpon tavan saada palautetta ja kehitettävää asiakkailta.
