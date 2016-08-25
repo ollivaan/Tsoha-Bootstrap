@@ -90,13 +90,7 @@ class Product extends BaseModel{
 
     return null;
   }
-//   $id, $product_id, $name, $purchased, $description, $expirationdate, $published, $publisher, $category, $price;
-//        public function save() {
-//        $statement = 'INSERT INTO Product (product_id ,name, purchased, description, expirationdate, published, publisher, category, price) VALUES (:product_id, :name, :purchased, :description, :expirationdate, :published, :publisher, :category, :price)';
-//        $query = DB::connection()->prepare($statement);
-//        
-//        $query->execute(array('product_id' => $this->product_id,'name' => $this->name, 'purchased' => $this->purchased, 'description' => $this->description, 'expirationdate' => $this->expirationdate, 'published' => $this->published, 'publisher' => $this->publisher, 'category' => $this->category, 'price' => $this->price));
-//    }
+
        public function save(){
     // Lisätään RETURNING id tietokantakyselymme loppuun, niin saamme lisätyn rivin id-sarakkeen arvon
     $query = DB::connection()->prepare('INSERT INTO Product (name, publisher, category, published ,description, price) VALUES (:name, :publisher, :category, :published , :description , :price) RETURNING id');
@@ -108,31 +102,18 @@ class Product extends BaseModel{
     $this->id = $row['id'];
   }
 public function update(){
-  $query = DB::connection()->prepare('UPDATE Product SET value = (name = :name, publisher = :publisher, category = :category, published = :published, description = :description, price = :price) WHERE id = :id');
-//  $sql = "UPDATE mytable SET value = '{$value}' WHERE id = {$id}";
-  $query->execute(array('name' => $this->name, 'publisher' => $this->publisher, 'category' => $this->category , 'published' => $this->published,'description' => $this->description, 'price' => $this->price));
+  $query = DB::connection()->prepare('UPDATE Product SET name = :name, publisher = :publisher, category = :category, published = :published, description = :description, price = :price WHERE id = :id');
 
-  $row = $query->fetch();
-      $this->id = $row['id'];     
+//  $sql = "UPDATE mytable SET value = '{$value}' WHERE id = {$id}";
+  $query->execute(array('id' => $this->id, 'name' => $this->name, 'publisher' => $this->publisher, 'category' => $this->category , 'published' => $this->published,'description' => $this->description, 'price' => $this->price));
+
+//  $row = $query->fetch();
+//      $this->id = $row['id'];     
 
 //  Kint::dump($row);
 }
 
-//         
-//  }
-//      public function update() {
-//           $query = DB::connection()->prepare('UPDATE Product SET name = :name, publisher = :publisher, category = :category, published = :published, description = :description, price = :price WHERE id = :id');
-////        $query = DB::connection()->prepare('UPDATE Partahoyla SET viittauksia = :viittauksia, aggressiivisuus = :aggressiivisuus WHERE id = :id');
-//        try {
-//    $query->execute(array('name' => $this->name, 'publisher' => $this->publisher, 'category' => $this->category , 'published' => $this->published,'description' => $this->description, 'price' => $this->price));
-//        $row = $query->fetch();
-//   
-//    $this->id = $row['id'];      
-//    return true;
-//        } catch (Exception $e) {
-//            return false;
-//        }
-//    }
+
     public function delete() {
        
             $query = DB::connection()->prepare('DELETE FROM Product WHERE id = :id');

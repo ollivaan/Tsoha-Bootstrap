@@ -45,37 +45,22 @@ class Customer extends BaseModel{
 
     return null;
   }
-  public static function authenticate() {
+  public static function authenticate($name, $password) {
       $query = DB::connection()->prepare('SELECT * FROM Customer WHERE name = :name AND password = :password LIMIT 1');
-//        $name = isset($_POST["name"]) ? $_POST["name"] : 0;
-//        $password = isset($_POST["password"]) ? $_POST["password"] : 0;
-//      $query->execute(array('name' => $name, 'password' => $password));
-//
-//$row = $query->fetch();
-//      $query = DB::connection()->prepare('SELECT * FROM Player WHERE name = :name AND password = :password LIMIT 1');
-$query->execute(array('name' => $name, 'password' => $password));
+
+      $query->execute(array('name' => $name, 'password' => $password));
 
 $row = $query->fetch();
 if($row){
-//    return ;
-            if ($row['password'] == $password) {
-                $user = new Customer(array(
-                    'id' => $row['id'],
-                    'name' => $row['name'],
-                    'password' => $row['password']
-                ));
-                return $user;
+
+    return new Customer(array('id' => $row['id'], 'name' => $row['name']));
+
 }else{
+
   return null;
 }
       
   }
-
-
-  
-
-   
- }
     
     public function errors($password_verification) {
         $errors = array_merge($this->validate_name(), $this->validate_password($password_verification));

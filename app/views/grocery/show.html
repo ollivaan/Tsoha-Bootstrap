@@ -5,7 +5,7 @@
 <!--<h1>{{grocery.name}}</h1>-->
 
 
-<h1>Tuote</h1> 
+<h1>Kauppa</h1> 
 {{ "now"|date('d/m/Y H:i', timezone="Europe/Paris") }}
   <!-- Lisää tuote on vain kauppiaan käytössä-->
 
@@ -19,7 +19,7 @@
         <th>Lisäyspäivä</th>
         <th>Julkaisija</th>
         <th>Id</th>
-        <th>Hinta</th>
+        <th>Arvionnit</th>
         <th></th>
       </tr>
           <tr>
@@ -34,8 +34,8 @@
                 <label class="label label-danger">ei arvioitu
               {% endif %}
           </td>
-          <td>{{grocery.price}}</td>
-          <td><a class="btn btn-default btn-sm" href="{{base_path}}/grocery/{{grocery.id}}/edit">Muokkaa</a></td>
+          <!--<td>{{grocery.price}}</td>-->
+          <!--<td><a class="btn btn-default btn-sm" href="{{base_path}}/grocery/{{grocery.id}}/edit">Muokkaa</a></td>-->
         </tr>
     </thead>
 

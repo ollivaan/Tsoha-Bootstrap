@@ -7,7 +7,7 @@
 {% endmacro %}
 
 {% macro change_button(action, text) %}
- <form method="post" action="{{action}}" style="display: inline-block;">
+ <form method="get" action="{{action}}" style="display: inline-block;">
   <button type="submit" class="btn btn-warning">Muokkaa</button>
 </form>
 {% endmacro %}

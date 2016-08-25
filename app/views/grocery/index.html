@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <h1>Kauppiaan tuotteet</h1>
+  <h1>Kaupat</h1>
 
   <!-- Lisää tuote on vain kauppiaan käytössä-->
 
@@ -34,7 +34,7 @@
                 <label class="label label-danger">ei arvioitu
               {% endif %}
           </td>
-          <td>{{grocery.price}}</td>
+          <!--<td>{{grocery.price}}</td>-->
           <td><a class="btn btn-default btn-sm" href="{{base_path}}/grocery/{{grocery.id}}/edit">Lisää arvostelu</a></td>
         </tr>
       {% endfor %}

@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/models/grocery.php</file>
             <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/sql/create_tables.sql</file>
-            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/models/vendor.php</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/config/routes.php</file>
             <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/models/product.php</file>
-            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/models/Customer.php</file>
-            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/models/hello_world.php</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/lib/base_controller.php</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/views/products/edit.html</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/controllers/user_controller.php</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/views/accounts/login.html</file>
+            <file>file:/home/ollivaan/tsoha/Tsoha-Bootstrap/app/controllers/product_controller.php</file>
         </group>
     </open-files>
 </project-private>

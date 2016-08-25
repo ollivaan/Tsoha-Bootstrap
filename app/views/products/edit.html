@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Muokkaa</h1>
+  <h1>Muokkaa tuotetta {{attributes.name}}</h1>
     <!--public $id, $product_id, $name, $purchased, $description, $expirationdate, $published, $publisher, $category, $price;-->
   {% if errors %}
     <div class="alert alert-danger">
@@ -12,7 +12,7 @@
     </div>
   {% endif %}
 
-  <form method="post" action="{{base_path}}/products">
+  <form method="post" action="{{base_path}}/product/edit/{{attributes.id}}">
     <div class="form-group">
       <label>Nimi</label>
       <input type="text" name="name" class="form-control" value="{{attributes.name}}">

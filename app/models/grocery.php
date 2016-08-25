@@ -63,12 +63,7 @@ class Grocery extends BaseModel{
     return null;
   }
 
-//      public function save() {
-//        $statement = 'INSERT INTO Grocery (name, address, phone, mail, openinhours) VALUES (:name, :password, :address, :phone, :mail, :openinhours)';
-//        $query = DB::connection()->prepare($statement);
-//        
-//        $query->execute(array('name' => $this->name, 'address' => $this->address, 'phone' => $this->phone, 'mail' => $this->mail, 'openinhours' => $this->openinhours));
-//    }
+
 }
               
              
