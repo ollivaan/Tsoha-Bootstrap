@@ -9,6 +9,10 @@ class GroceryController extends BaseController{
   
     
   }
+    public static function review(){
+    View::make('grocery/review.html');
+  }
+
 //ei toimi jostain syystä?  
   public static function show($id){
         $grocery = Grocery::find($id);         

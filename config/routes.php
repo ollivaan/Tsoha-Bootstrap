@@ -97,4 +97,7 @@ $routes->get('/product/edit/:id', 'check_logged_in', function($id){
 $routes->post('/logout', function(){
   UserController::logout();
 });
+$routes->get('/review/:id', function() {
+    GroceryController::review();
+});
 
