@@ -6,12 +6,16 @@
 <h1>Kirjoita arvostelu tuotteesta</h1> 
 {{ "now"|date('d/m/Y H:i', timezone="Europe/Paris") }}
 
-
+  <form method="post" action="{{base_path}}/review/:id">
 <form>
   <table class="table table-striped table-bordered">
    <div class="form-group">
       <label>Nimi</label>
-      <input type="text" class="form-control" value="">
+      <input type="text" class="form-control">
+       <!--<input type="text" name="name" class="form-control">-->
+
+      
+
     </div>
   <div class="form-group">
   <label>Kauppa</label>

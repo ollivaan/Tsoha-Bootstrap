@@ -101,3 +101,11 @@ $routes->get('/review/:id', function() {
     GroceryController::review();
 });
 
+$routes->post('/grocery/:id', function(){
+  GroceryController::store();
+});
+// Pelin lisäyslomakkeen näyttäminen
+$routes->get('/review/:id', function(){
+  GroceryController::create();
+});
+

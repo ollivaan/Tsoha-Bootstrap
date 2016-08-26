@@ -12,6 +12,18 @@ CREATE TABLE Vendor(
   invitation int
 
 );
+
+CREATE TABLE Reviews(
+  id SERIAL PRIMARY KEY,
+  reviewC_id INTEGER REFERENCES Customer(id),
+  reviewP_id INTEGER REFERENCES Product(id), 
+  reviewG_id INTEGER REFERENCES Grocery(id), 
+  name varchar(50) NOT NULL, 
+  description varchar(50) NOT NULL,
+  shop varchar(50) NOT NULL,
+  grade Integer
+);
+
 CREATE TABLE Product(
   id SERIAL PRIMARY KEY,
   product_id INTEGER REFERENCES Customer(id), -- Viiteavain Customer-tauluun
@@ -32,6 +44,6 @@ CREATE TABLE Grocery(
   address varchar(50) NOT NULL,
   phone varchar(50),
   mail varchar(50),
-  openinhours varchar(50),
-  reviews Integer
+  openinhours varchar(50)
+--   reviews Integer
 );

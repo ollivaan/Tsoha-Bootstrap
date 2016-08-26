@@ -33,8 +33,8 @@ class Grocery extends BaseModel{
               'address'=>$row['address'],
               'phone'=>$row['phone'],
               'mail'=>$row['mail'],
-              'openinhours'=>$row['openinhours'],
-              'reviews'=>$row['reviews']
+              'openinhours'=>$row['openinhours']
+//              'reviews'=>$row['reviews']
                   ));
                   
       }
@@ -55,8 +55,8 @@ class Grocery extends BaseModel{
         'address'=>$row['address'],
         'phone'=>$row['phone'],
         'mail'=>$row['mail'],
-        'openinhours'=>$row['openinhours'],
-        'reviews'=>$row['reviews']
+        'openinhours'=>$row['openinhours']
+//        'reviews'=>$row['reviews']
       ));
 
       return $grocery;
@@ -64,9 +64,9 @@ class Grocery extends BaseModel{
 
     return null;
   }
-  public static function count(){
+  public static function count($id){
     $query = DB::connection()->prepare('SELECT count(*) AS maara FROM Grocery');
-    $query->execute();
+    $query->execute((array('id' => $id)));
     $row = $query->fetch();
 
     if($row){

@@ -12,6 +12,7 @@ class GroceryController extends BaseController{
     public static function review(){
 
     $groceries = Grocery::all();
+//    $groceries = Grocery::count($id);
 
     View::make('grocery/review.html',array('groceries' => $groceries));
   }
@@ -20,5 +21,6 @@ class GroceryController extends BaseController{
         $grocery = Grocery::find($id);         
         View::make('grocery/show.html', array('grocery' => $grocery));
     }
+    
     	
 }

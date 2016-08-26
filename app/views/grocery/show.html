@@ -29,26 +29,22 @@
           <td>{{grocery.phone}}</td>
           <td>{{grocery.mail}}</td>
           <td>{{grocery.openinhours}}</td>
-          <td>{{grocery.reviews}}</td>
+          <!--<td>{{grocery.reviews}}</td>-->
 
-           {% if grocery.reviews %}
-                <label class="label label-success">arvioitu
-              {% else %}
-                <label class="label label-danger">ei arvioitu
-              {% endif %}
+           <!--{% if grocery.reviews %}-->
+                <!--<label class="label label-success">arvioitu-->
+              <!--{% else %}-->
+                <!--<label class="label label-danger">ei arvioitu-->
+              <!--{% endif %}-->
                <tbody>
-      {% for grocery in groceries %}
-    <tr>
-        <td>{{grocery.reviews}}</td>
-    </tr>
-         {% endfor %}
+
               
               <!--
           </td>-->
           <!--<td>{{grocery.price}}</td>-->
           <!--<td><a class="btn btn-default btn-sm" href="{{base_path}}/grocery/{{grocery.id}}/edit">Muokkaa</a></td>-->
-        </tr>
-    </thead>
+<!--        </tr>
+    </thead>-->
 
   </table>
 {% endblock %}
