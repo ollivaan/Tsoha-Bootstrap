@@ -5,7 +5,7 @@
 <!--<h1>{{grocery.name}}</h1>-->
 
 
-<h1>Kauppa</h1> 
+<h1>{{grocery.name}}</h1> 
 {{ "now"|date('d/m/Y H:i', timezone="Europe/Paris") }}
   <!-- Lisää tuote on vain kauppiaan käytössä-->
 
@@ -15,25 +15,36 @@
         
    
       <tr>
-        <th>Nimi</th>
-        <th>Lisäyspäivä</th>
-        <th>Julkaisija</th>
-        <th>Id</th>
-        <th>Arvionnit</th>
+        <!--<th>Nimi</th>-->
+        <th>osoite</th>
+        <th>puh</th>
+        <th>mail</th>
+        <th>aukioloajat</th>
+        <th>arvosana</th>
         <th></th>
       </tr>
           <tr>
-          <td><a href="{{base_path}}/grocery/{{grocery.id}}">{{grocery.name}}</td>
-          <td>{{grocery.published}}</td>
-          <td>{{grocery.publisher}}</td>
-          <td>{{grocery.id}}</td>
-          <td>
-              {% if grocery.purchased %}
+          <!--<td><a href="{{base_path}}/grocery/{{grocery.id}}">{{grocery.name}}</td>-->
+          <td>{{grocery.address}}</td>
+          <td>{{grocery.phone}}</td>
+          <td>{{grocery.mail}}</td>
+          <td>{{grocery.openinhours}}</td>
+          <td>{{grocery.reviews}}</td>
+
+           {% if grocery.reviews %}
                 <label class="label label-success">arvioitu
               {% else %}
                 <label class="label label-danger">ei arvioitu
               {% endif %}
-          </td>
+               <tbody>
+      {% for grocery in groceries %}
+    <tr>
+        <td>{{grocery.reviews}}</td>
+    </tr>
+         {% endfor %}
+              
+              <!--
+          </td>-->
           <!--<td>{{grocery.price}}</td>-->
           <!--<td><a class="btn btn-default btn-sm" href="{{base_path}}/grocery/{{grocery.id}}/edit">Muokkaa</a></td>-->
         </tr>

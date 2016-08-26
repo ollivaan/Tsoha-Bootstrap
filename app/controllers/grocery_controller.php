@@ -2,7 +2,7 @@
 
 class GroceryController extends BaseController{
   public static function index(){
-    
+
     $groceries = Grocery::all();
     
     View::make('grocery/index.html', array('groceries' => $groceries));
@@ -10,10 +10,12 @@ class GroceryController extends BaseController{
     
   }
     public static function review(){
-    View::make('grocery/review.html');
+
+    $groceries = Grocery::all();
+
+    View::make('grocery/review.html',array('groceries' => $groceries));
   }
 
-//ei toimi jostain syystä?  
   public static function show($id){
         $grocery = Grocery::find($id);         
         View::make('grocery/show.html', array('grocery' => $grocery));

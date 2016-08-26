@@ -2,7 +2,7 @@
 
 class Grocery extends BaseModel{
     // attribuutit
-    public $id, $customer_id, $name, $address, $phone, $mail, $openinhours;
+    public $id, $customer_id, $name, $address, $phone, $mail, $openinhours, $reviews;
   // konstruktori
 
 
@@ -10,8 +10,8 @@ class Grocery extends BaseModel{
     
     public function __construct($attributes){      
     parent::__construct($attributes);
-    $this->groceries = array('id'=> 1, 'name'=> 'Alepa', 'address'=>'syrjätie 3', 'phone'=>'0141024', 'mail'=>'alepa.@.fi', 'openinhours'=>'06:00-23:00');
-    $this->tuote2 = array('id'=> 2, 'name'=> 'K-market', 'address'=>'Tirinläntie', 'phone'=>'0141045', 'mail'=>'kmarket.@.fi', 'openinhours'=>'06:00-23:00');
+    $this->groceries = array('id'=> 1, 'name'=> 'Alepa', 'address'=>'syrjätie 3', 'phone'=>'0141024', 'mail'=>'alepa.@.fi', 'openinhours'=>'06:00-23:00','reviews'=>'5');
+    $this->tuote2 = array('id'=> 2, 'name'=> 'K-market', 'address'=>'Tirinläntie', 'phone'=>'0141045', 'mail'=>'kmarket.@.fi', 'openinhours'=>'06:00-23:00','reviews'=>'1');
 //    $this->tuote2 = array('id'=> 6, 'name'=> 'Maito', 'purchased'=>'11-11-1900', 'description'=>'mieto', 'published'=>'12-11-1993', 'publisher'=>'unknow', 'price'=>1);
 //    $skyrim = new Grocery(array('id' => 9, 'name' => 'The Elder Scrolls V: Skyrim', 'description' => 'Arrow to the knee'));
     
@@ -33,7 +33,8 @@ class Grocery extends BaseModel{
               'address'=>$row['address'],
               'phone'=>$row['phone'],
               'mail'=>$row['mail'],
-              'openinhours'=>$row['openinhours']
+              'openinhours'=>$row['openinhours'],
+              'reviews'=>$row['reviews']
                   ));
                   
       }
@@ -54,7 +55,8 @@ class Grocery extends BaseModel{
         'address'=>$row['address'],
         'phone'=>$row['phone'],
         'mail'=>$row['mail'],
-        'openinhours'=>$row['openinhours']
+        'openinhours'=>$row['openinhours'],
+        'reviews'=>$row['reviews']
       ));
 
       return $grocery;
@@ -62,6 +64,18 @@ class Grocery extends BaseModel{
 
     return null;
   }
+  public static function count(){
+    $query = DB::connection()->prepare('SELECT count(*) AS maara FROM Grocery');
+    $query->execute();
+    $row = $query->fetch();
+
+    if($row){
+      $amount = $row['maara'];
+      return $amount;
+    }
+    return null;
+  }
+
 
 
 }

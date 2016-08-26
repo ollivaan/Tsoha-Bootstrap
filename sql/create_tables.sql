@@ -32,5 +32,6 @@ CREATE TABLE Grocery(
   address varchar(50) NOT NULL,
   phone varchar(50),
   mail varchar(50),
-  openinhours varchar(50)
+  openinhours varchar(50),
+  reviews Integer
 );

@@ -12,10 +12,12 @@
    
       <tr>
         <th>Nimi</th>
-        <th>Lisäyspäivä</th>
-        <th>Julkaisija</th>
-        <th>Id</th>
-        <th>Arvosana</th>
+        <th>osoite</th>
+        <th>puh</th>
+        <!--<th>Id</th>-->
+        <th>mail</th>
+        <th>aukioloajat</th>
+        <th>keskiarvo</th>
         <th></th>
       </tr>
       
@@ -24,17 +26,20 @@
       {% for grocery in groceries %}
     <tr>
           <td><a href="{{base_path}}/grocery/{{grocery.id}}">{{grocery.name}}</td>
-          <td>{{grocery.published}}</td>
-          <td>{{grocery.publisher}}</td>
-          <td>{{grocery.id}}</td>
-          <td>
+          <td>{{grocery.address}}</td>
+          <td>{{grocery.phone}}</td>
+          <td>{{grocery.mail}}</td>
+          <td>{{grocery.openinhours}}</td>
+          <td>{{grocery.reviews}}</td>
+<!--          <td> tähän kohtaan arvionti
               {% if grocery.purchased %}
                 <label class="label label-success">arvioitu
               {% else %}
                 <label class="label label-danger">ei arvioitu
               {% endif %}
-          </td>
+          </td>-->
           <!--<td>{{grocery.price}}</td>-->
+          
           <td><a class="btn btn-default btn-sm" href="{{base_path}}/review/{{grocery.id}}">Lisää arvostelu</a></td>
         <!--</tr>grocery/{{grocery.id}}/edit-->
       {% endfor %}
